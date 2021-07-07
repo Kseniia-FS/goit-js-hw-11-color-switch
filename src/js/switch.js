@@ -11,6 +11,8 @@ class Switch {
   constructor() {
     this.interval = null;
     this.isActive = false;
+    this.delay = 1000;
+    
   }
 
   changeBgcolor() {
@@ -18,9 +20,9 @@ class Switch {
       return;
     }
     this.interval = setInterval(() => {
-        this.isActive = true;
+      this.isActive = true;
       refs.body.style.backgroundColor = this.getRandomColor();
-    }, 1000);
+    }, this.delay);
   }
 
   stopChangeBgColor (){
